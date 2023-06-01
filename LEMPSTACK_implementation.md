@@ -72,18 +72,17 @@ you may exit mysql once everything is running fine
     
 ### Step 5. Installing and configuring php
     
-* You have Nginx installed to serve your content and MySQL installed to store and manage your data. Now you can install PHP to process code and generate dynamic content for the web server. While Apache embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most PHP-based websites, but it requires additional configuration. You’ll need to install php-fpm, which stands for “PHP fastCGI process manager”, and tell Nginx to pass PHP requests to this software for processing. Additionally, you’ll need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. Core PHP packages will automatically be installed as dependencies. *
+To enable dynamic content processing and PHP support for Nginx, we will install and configure PHP-FPM (PHP FastCGI Process Manager) as a bridge between the PHP interpreter and the web server. PHP-FPM will handle PHP processing and improve overall performance for most PHP-based websites. We will also install the php-mysql module, which allows PHP to communicate with MySQL databases. The installation of core PHP packages will be handled as dependencies.
     
 To install php and all its dependencies, run:
     
     ` sudo apt install php-fpm php-mysql`
     
 ### Step 6. Configuring nginx to use php processor
-   * When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. In this guide, we will use projectLEMP as an example domain name.
-
-On Ubuntu 20.04, Nginx has one server block enabled by default and is configured to serve documents out of a directory at /var/www/html. While this works well for a single site, it can become difficult to manage if you are hosting multiple sites. Instead of modifying /var/www/html, we’ll create a directory structure within /var/www for the your_domain website, leaving /var/www/html in place as the default directory to be served if a client request does not match any other sites.*
     
-Create a root web directory for your-domain website
+In this section we will use projectLEMP as an example domain name. We’ll create a directory structure within /var/www for the your_domain website, leaving /var/www/html in place as the default directory to be served if a client request does not match any other sites.
+    
+Create a root web directory our your-domain website
     
    ` sudo mkdir /var/www/projectLEMP`
     
