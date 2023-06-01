@@ -220,7 +220,10 @@ To see if table has been populated, run:
 
 ![Screenshot (236)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/ca5717cc-d9cc-49ca-aa13-7808f2ccdc9e)
 
+exit mysql
+
 ` exit`
+
 ` nano /var/www/projectLEMP/todo_list.php`
 
 Put the code  into the todo_list.php file like so:
@@ -229,11 +232,11 @@ Put the code  into the todo_list.php file like so:
 
 Go to browser and type in the following url:
 
-`http://<Public_domain_or_IP>/todo_list.php`
+` http://<Public_domain_or_IP>/todo_list.php`
 
-substitute contents in <> with local ip address obtained from AWS
+Substitute contents in <> with local ip address obtained from AWS
 
-![Screenshot (235)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/a5c7337e-43b1-4d70-bdeb-1601194e17fc)
+The follwoing page is displayed with our todo list
 
 ![Screenshot (238)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/1c0787e5-5f22-4c65-9aaa-6f27ad29070a)
 
