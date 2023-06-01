@@ -125,26 +125,26 @@ server {
     
  Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
     
-    ` sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
+  ` sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
  
  Test NGINX, run the command:
     
-   ` sudo nginx -t`
+ ` sudo nginx -t`
     
  ![Screenshot (222)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/0e7ca27e-ecf6-438a-8a50-76dbe95595a3)
     
 Reload NGINX:
     
-    ` sudo systemctl reload nginx`
+ ` sudo systemctl reload nginx`
  
 ![Screenshot (221)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/a29b19f0-4a21-4b8a-be6a-abba219120e2)
    
 Create an index file to show this content on your site using the following commands:
     
-    ` sudo echo 'Hello LEMP from hostname' 
-      $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP'
-      $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
-    `
+ ` sudo echo 'Hello LEMP from hostname' 
+   $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP'
+   $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+ `
 The screen below shows that we have a connection and everything has been configured successfully.
     
  ![Screenshot (223)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d1600b6b-65b9-4f4d-b0fe-4d18be20386d)
@@ -161,6 +161,7 @@ and paste the following code into the info.php file.
     <?php
        phpinfo();
   ```
+
 ![Screenshot (227)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d87ba9cf-b688-4770-9e29-529181b953e5)
 
  In any brower type the following url:
@@ -170,6 +171,28 @@ and paste the following code into the info.php file.
 This page should be displayed:
 
 ![Screenshot (229)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/b95a0370-ce46-4b97-9950-efd0d160e780)
-This showws that nginx is capable of handling php files 
+This showws that nginx is capable of handling php files.
 
 ### Step 8. Retrieving data from mysql database with php
+
+` sudo mysql`
+
+`` CREATE DATABASE `example_database`;``
+
+Create a new user called, "example_user":
+
+` CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';`
+
+Grant permission to newly created user
+
+` GRANT ALL ON example_database.* TO 'example_user'@'%';`
+
+` exit`
+
+Test that new user has the necessary permissions
+
+` mysql -u example_user -p`
+
+Display the database 
+
+` SHOW DATABASES;`
