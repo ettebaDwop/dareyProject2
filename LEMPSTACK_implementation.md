@@ -25,3 +25,21 @@ Upgrade the installed packages to the latest versions.
     `sudo apt upgrade -y`
 
 #### Installing and configuring  the nginx web server
+
+    `sudo apt install nginx`
+    
+Check statust os Nginx
+
+    `sudo systemctl status nginx`
+    
+Check to see if we can access nginx locally on our Ubuntu shell, run:
+
+     `curl http://localhost:80`
+     
+On any brower enter the following url:
+
+     `http://<Public-IP-Address>:80`
+     
+replacing the <Public-IP-Address> with our ip address generated from AWS.
+    
+    
