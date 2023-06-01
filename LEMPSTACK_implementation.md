@@ -218,32 +218,22 @@ To see if table has been populated, run:
 
 ` SELECT * FROM example_database.todo_list;`
 
+![Screenshot (236)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/ca5717cc-d9cc-49ca-aa13-7808f2ccdc9e)
+
 ` exit`
 ` nano /var/www/projectLEMP/todo_list.php`
 
-Put the code below into the todo_list.php file
-``` 
-<?php
-$user = "example_user";
-$password = "password";
-$database = "example_database";
-$table = "todo_list";
+Put the code  into the todo_list.php file like so:
 
-try {
-  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-  echo "<h2>TODO</h2><ol>";
-  foreach($db->query("SELECT content FROM $table") as $row) {
-    echo "<li>" . $row['content'] . "</li>";
-  }
-  echo "</ol>";
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
-```
+![Screenshot (239)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d9d2f6d0-2b52-4783-ad43-1222189ac542)
+
 Go to browser and type in the following url:
 
 `http://<Public_domain_or_IP>/todo_list.php`
 
 substitute contents in <> with local ip address obtained from AWS
+
+![Screenshot (235)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/a5c7337e-43b1-4d70-bdeb-1601194e17fc)
+
+![Screenshot (238)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/1c0787e5-5f22-4c65-9aaa-6f27ad29070a)
 
