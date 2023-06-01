@@ -195,9 +195,11 @@ Test that new user has the necessary permissions
 
 ![Screenshot (232)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/cd34fb7e-225a-45e8-bc4e-cf5df94f7769)
 
-Display the database 
+To display the database: 
+
 
 ` SHOW DATABASES;`
+
 
 ![Screenshot (233)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/3601f502-1521-4b70-bd68-752d8cf80e39)
 
