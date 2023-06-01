@@ -208,10 +208,10 @@ Next, we’ll create a test table named todo_list. From the MySQL console, run t
 We will populate the test table:
 
 ``` 
-mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
-mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");
-mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");
-mysql> INSERT INTO example_database.todo_list (content) VALUES ("an this last thing");
+INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+INSERT INTO example_database.todo_list (content) VALUES ("My second important item");
+INSERT INTO example_database.todo_list (content) VALUES ("My third important item");
+INSERT INTO example_database.todo_list (content) VALUES ("an this last thing");
 ```
 
 To see if table has been populated, run:
