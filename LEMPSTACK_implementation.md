@@ -193,6 +193,57 @@ Test that new user has the necessary permissions
 
 ` mysql -u example_user -p`
 
+![Screenshot (232)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/cd34fb7e-225a-45e8-bc4e-cf5df94f7769)
+
 Display the database 
 
 ` SHOW DATABASES;`
+
+![Screenshot (233)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/3601f502-1521-4b70-bd68-752d8cf80e39)
+
+Next, we’ll create a test table named todo_list. From the MySQL console, run the following statement:
+
+` CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));`
+
+We will populate the test table:
+
+``` 
+mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+mysql> INSERT INTO example_database.todo_list (content) VALUES ("My second important item");
+mysql> INSERT INTO example_database.todo_list (content) VALUES ("My third important item");
+mysql> INSERT INTO example_database.todo_list (content) VALUES ("an this last thing");
+```
+
+To see if table has been populated, run:
+
+` SELECT * FROM example_database.todo_list;`
+
+` exit`
+` nano /var/www/projectLEMP/todo_list.php`
+
+Put the code below into the todo_list.php file
+``` 
+<?php
+$user = "example_user";
+$password = "password";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+```
+Go to browser and type in the following url:
+
+`http://<Public_domain_or_IP>/todo_list.php`
+
+substitute contents in <> with local ip address obtained from AWS
+
