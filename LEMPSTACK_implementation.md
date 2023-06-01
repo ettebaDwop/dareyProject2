@@ -103,15 +103,21 @@ Create a root web directory for your-domain website
     
    ` sudo nginx -t`
     
+  ![Screenshot (222)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/0e7ca27e-ecf6-438a-8a50-76dbe95595a3)
+    
 Reload NGINX:
     
     ` sudo systemctl reload nginx`
-    
+ 
+![Screenshot (221)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/a29b19f0-4a21-4b8a-be6a-abba219120e2)
+   
 Create an index file to show this content on your site using the following commands:
     
     ` sudo echo 'Hello LEMP from hostname' 
       $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP'
       $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
     `
+![Screenshot (223)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d1600b6b-65b9-4f4d-b0fe-4d18be20386d)
+    
 ### Step 7. Testing php with nginx
 ### Step 8. Retrieving data from mysql database with php
