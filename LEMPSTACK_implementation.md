@@ -16,7 +16,8 @@ A LEMP stack refers to a software stack that includes Linux, Nginx (pronounced "
 
 #### Set up the Ubuntu server
 Connect to your EC2 instance via SSH using the key pair you selected during instance launch.
-**insert key pair image ***
+
+![Screenshot (214)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/f015894c-7938-483a-97d3-2fdebfd2fd98)
 
 Update the package repository cache.
 
