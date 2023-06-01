@@ -161,15 +161,15 @@ and paste the following code into the info.php file.
     <?php
        phpinfo();
   ```
+![Screenshot (227)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d87ba9cf-b688-4770-9e29-529181b953e5)
 
  In any brower type the following url:
 
-`http://<IP-Address>/info.php`
+` http://<IP-Address>/info.php`
+
 This page should be displayed:
 
-
-
-Thsis showws that nginx is capable of handling php files 
-
+![Screenshot (229)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/b95a0370-ce46-4b97-9950-efd0d160e780)
+This showws that nginx is capable of handling php files 
 
 ### Step 8. Retrieving data from mysql database with php
