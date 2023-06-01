@@ -150,4 +150,26 @@ The screen below shows that we have a connection and everything has been configu
  ![Screenshot (223)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d1600b6b-65b9-4f4d-b0fe-4d18be20386d)
     
 ### Step 7. Testing php with nginx
+From the results obtained in the preceeding step, our LEMP stack setup is now complete and fully operational. However, we need to test to see if it works as expected. 
+Thus, using Nano a new file info.php would be created to test the setup. To create the file run the command:
+       
+ ` sudo nano /var/www/projectLEMP/info.php`
+    
+and paste the following code into the info.php file.
+    
+  ```
+    <?php
+       phpinfo();
+  ```
+
+ In any brower type the following url:
+
+`http://<IP-Address>/info.php`
+This page should be displayed:
+
+
+
+Thsis showws that nginx is capable of handling php files 
+
+
 ### Step 8. Retrieving data from mysql database with php
