@@ -66,6 +66,7 @@ log in to mysql
 you may exit mysql once everything is running fine
     
     `mysql> exit`
+![Screenshot (218)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/eaf0cba7-25e5-4561-8e4c-33c6a0a39f78)
     
     
     
