@@ -95,6 +95,34 @@ Create a root web directory for your-domain website
     
    ` sudo nano /etc/nginx/sites-available/projectLEMP`
     
+ Paste the following bare-bone configuration into the new configuration file:
+    
+ ``` 
+    #/etc/nginx/sites-available/projectLEMP
+
+server {
+    listen 80;
+    server_name projectLEMP www.projectLEMP;
+    root /var/www/projectLEMP;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+} 
+  ```
+    
  Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
     
     ` sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
@@ -103,7 +131,7 @@ Create a root web directory for your-domain website
     
    ` sudo nginx -t`
     
-  ![Screenshot (222)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/0e7ca27e-ecf6-438a-8a50-76dbe95595a3)
+ ![Screenshot (222)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/0e7ca27e-ecf6-438a-8a50-76dbe95595a3)
     
 Reload NGINX:
     
@@ -117,7 +145,9 @@ Create an index file to show this content on your site using the following comma
       $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP'
       $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
     `
-![Screenshot (223)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d1600b6b-65b9-4f4d-b0fe-4d18be20386d)
+The screen below shows that we have a connection and everything has been configured successfully.
+    
+ ![Screenshot (223)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/d1600b6b-65b9-4f4d-b0fe-4d18be20386d)
     
 ### Step 7. Testing php with nginx
 ### Step 8. Retrieving data from mysql database with php
