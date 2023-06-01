@@ -45,4 +45,5 @@ On any brower enter the following url:
      
 replacing the <Public-IP-Address> with our ip address generated from AWS.
     
-    
+![Screenshot (215)](https://github.com/ettebaDwop/dareyProject2/assets/7973831/99150c85-106c-410e-a2a8-d46ef1217153)
+
